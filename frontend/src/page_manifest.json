@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "Home",
+    "Catalog",
+    "Productdetail",
+    "Checkout"
+  ],
+  "generated_at": null,
+  "scaffolded": false
+}

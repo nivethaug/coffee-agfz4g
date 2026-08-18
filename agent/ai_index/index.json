@@ -1,0 +1,70 @@
+{
+  "project": "coffee",
+  "type": "website",
+  "updated": "2026-08-18",
+  "routes": [
+    { "path": "/", "page": "Home", "file": "src/pages/Home.tsx" },
+    { "path": "/catalog", "page": "Catalog", "file": "src/pages/Catalog.tsx" },
+    { "path": "/product/:id", "page": "Productdetail", "file": "src/pages/Productdetail.tsx" },
+    { "path": "/checkout", "page": "Checkout", "file": "src/pages/Checkout.tsx" },
+    { "path": "*", "page": "NotFound", "file": "src/pages/NotFound.tsx" }
+  ],
+  "files": [
+    {
+      "path": "src/App.tsx",
+      "lines": 36,
+      "type": "entry",
+      "description": "Router setup: BrowserRouter, single root route '/' -> Home, all routes wrapped in Layout; CartProvider + QueryClientProvider + Toaster."
+    },
+    {
+      "path": "src/layout/Layout.tsx",
+      "lines": 22,
+      "type": "layout",
+      "description": "Flex layout rendering Navbar in header, <Outlet /> main, luxury footer. Imports Navbar."
+    },
+    {
+      "path": "src/layout/Navbar.tsx",
+      "lines": 110,
+      "type": "layout",
+      "description": "Sticky glass top nav with NavLink to Home/Catalog/Product Detail/Checkout, cart badge via useCart, mobile hamburger with transition."
+    },
+    {
+      "path": "src/pages/Home.tsx",
+      "lines": 150,
+      "type": "page",
+      "description": "Cinematic hero with verified Unsplash photo, featured products (top 3 from catalog), editorial origin/roasting/craftsmanship sections."
+    },
+    {
+      "path": "src/pages/Catalog.tsx",
+      "lines": 130,
+      "type": "page",
+      "description": "Product grid with search input, roast/origin filter buttons, hover-zoom cards linking to /product/:id, loading skeleton."
+    },
+    {
+      "path": "src/pages/Productdetail.tsx",
+      "lines": 160,
+      "type": "page",
+      "description": "Product gallery with thumbnail switcher, qty stepper, add-to-bag via useCart, tasting notes, trust badges, not-found state."
+    },
+    {
+      "path": "src/pages/Checkout.tsx",
+      "lines": 200,
+      "type": "page",
+      "description": "Cart with qty controls and remove, shipping/payment form with validation, order confirmation screen. Demo only — no real payment."
+    },
+    {
+      "path": "src/features/catalog.ts",
+      "lines": 140,
+      "type": "data",
+      "description": "Product interface + 8 mock coffee products with verified Unsplash imagery. PENDING: replace with backend endpoint."
+    },
+    {
+      "path": "src/features/CartContext.tsx",
+      "lines": 60,
+      "type": "context",
+      "description": "CartProvider with items/count/total/add/setQty/remove/clear. In-memory only; PENDING: persist to backend."
+    }
+  ],
+  "dependencies": ["react-router-dom", "@tanstack/react-query", "lucide-react", "tailwindcss"],
+  "summary": "Premium boutique coffee e-commerce UI (dark espresso/gold theme) with catalog, product detail, cart and demo checkout. All data is mock; backend integration pending."
+}
